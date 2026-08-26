@@ -1,0 +1,7 @@
+langchain
+langchain-community
+langchain-openai
+langchain-mcp-adapters
+duckduckgo-search
+rich
+ddgs
