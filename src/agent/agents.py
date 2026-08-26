@@ -7,11 +7,13 @@ from src.prompts import SYSTEM_PROMPT
 from src.tools import create_tools
 
 
-def create_agents():
+async def create_agents():
+
+    mcp_tools = await create_mcps()
 
     agent = create_agent(
         model=create_llm(),
-        tools=[create_tools()],
+        tools=[create_tools(), *mcp_tools],
         system_prompt = SYSTEM_PROMPT
     )
 

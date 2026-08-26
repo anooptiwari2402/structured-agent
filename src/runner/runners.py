@@ -2,8 +2,11 @@ from langchain_core.messages import HumanMessage
 from src.agent import create_agents
 
 
-def run_agent(input: str):
-    response  = create_agents().invoke({
+async def run_agent(input: str):
+
+    agent = await create_agents()
+
+    response  = agent.invoke({
         "messages":[HumanMessage(content=input)]
     })
 

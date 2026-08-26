@@ -37,3 +37,4 @@ async def create_mcps():
     )
 
     mcp_tools = await mcp.get_tools()
+    return mcp_tools
