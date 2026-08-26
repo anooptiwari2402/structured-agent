@@ -18,7 +18,15 @@ async def run_agent(query_input: str):
 
     response  = await agent.ainvoke({
         "messages":[HumanMessage(content=query_input)]
-    })
+    },
+        config={
+            "recursion_limit": 10,
+            "configurable": {
+                "thread_id": "user-123"
+            },
+            "max_concurrency": 10
+        }
+    )
 
     content = response["messages"][-1].content
 
