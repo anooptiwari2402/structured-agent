@@ -1,18 +1,10 @@
-import os
-from pathlib import Path
-
-from dotenv import load_dotenv
 from langchain_mcp_adapters.client import MultiServerMCPClient
+from src.constant.custom_constant import McpConstant
 
 
 async def create_mcps():
 
-    project_root = Path(__file__).resolve().parents[2]
-    load_dotenv(project_root / ".env")
-
-    api_key = os.getenv("TAVILY_API_KEY")
-
-    folder_path="/Users/anooptiwari/Downloads/workspace/pycharm-workspace/langgraph-playground/llm-model"
+    folder_path=McpConstant.folder_path
 
     mcp = MultiServerMCPClient(
         {
@@ -47,7 +39,7 @@ async def create_mcps():
                 "args": [
                     "-y",
                     "mcp-remote",
-                    f"https://mcp.tavily.com/mcp/?tavilyApiKey={api_key}"
+                    f"https://mcp.tavily.com/mcp/?tavilyApiKey={McpConstant.tavily_token}"
                 ],
                 "transport": "stdio"
             },

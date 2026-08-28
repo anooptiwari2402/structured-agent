@@ -6,6 +6,7 @@ from rich.markdown import Markdown
 from rich.console import Console
 
 from src.agent import create_agents
+from src.constant import RunnerConstant
 
 
 async def run_agent(query_input: str, thread_id: str):
@@ -20,11 +21,11 @@ async def run_agent(query_input: str, thread_id: str):
         "messages":[HumanMessage(content=query_input)]
     },
         config={
-            "recursion_limit": 100,
+            "recursion_limit": RunnerConstant.RECURSION_DEPTH,
             "configurable": {
                 "thread_id": f"{thread_id}",
             },
-            "max_concurrency": 30
+            "max_concurrency": RunnerConstant.MAX_CONCURRENCY,
         }
     )
 
