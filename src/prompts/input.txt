@@ -1,1 +1,44 @@
-hi
+# Act yourself as the Stock trading expert.
+
+## I want to use the LLM model and search tool to get the maximum profit by buying and selling the stocks.
+
+- Search the internet for latest news by various categories like:
+  - IT & AI
+  - Banking & FinTech
+  - Power & Energy
+  - Oil & Gas
+  - Telecom
+  - Healthcare & Pharma
+  - Automobile & EV
+  - Manufacturing
+  - Semiconductors
+  - Defense & Aerospace
+  - Infrastructure
+  - Real Estate
+  - Retail & E-Commerce
+  - Agriculture
+  - Logistics & Transportation
+  - Pharma
+  - Cables
+  - Media
+
+### Read the News in below format
+
+    index=0
+    company_list=[]
+    while news is not empty:
+        individual_news = news[index++]
+        explore_company_related_with_individual_news_then_add_into_company_list(individual_news, company_list)
+
+    buy_list=[]
+    sell_list=[]
+    for company in company_list:
+        analyse_20_year_stocks_price_and_current_news(company)
+        based_on_probabilty_distribution_add_company_in_buy_list_or_sell_list(company, buy_list, sell_list) //If probability show stock price will increase than put company into buy_lisy and if decrease than put into the sell_list
+
+
+### Show output that buy_list and sell_list
+
+> NOTE: Use tools
+        1. For Search and web scraping: Use tavily search tool and tavily mcp tools
+        2. To analyse financial data: Use Groww mcp tools
