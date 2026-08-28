@@ -20,7 +20,7 @@ async def run_agent(query_input: str, thread_id: str):
         "messages":[HumanMessage(content=query_input)]
     },
         config={
-            "recursion_limit": 1000,
+            "recursion_limit": 100,
             "configurable": {
                 "thread_id": f"{thread_id}",
             },

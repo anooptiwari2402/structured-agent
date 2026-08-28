@@ -16,9 +16,9 @@ def create_nvidia_llm():
         base_url="https://integrate.api.nvidia.com/v1",
         api_key=api_key,
         model="nvidia/nemotron-3-ultra-550b-a55b",
-        temperature=0.1,
-        max_tokens=100096,
-        # chat_template_kwargs={"enable_thinking":True},
+        temperature=1,
+        max_tokens=16384,
+        timeout=100000000
     )
 
     return llm
