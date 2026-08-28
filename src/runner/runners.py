@@ -8,7 +8,7 @@ from rich.console import Console
 from src.agent import create_agents
 
 
-async def run_agent(query_input: str):
+async def run_agent(query_input: str, thread_id: str):
 
     # logging.basicConfig(level=logging.INFO)
 
@@ -20,11 +20,11 @@ async def run_agent(query_input: str):
         "messages":[HumanMessage(content=query_input)]
     },
         config={
-            "recursion_limit": 10,
+            "recursion_limit": 1000,
             "configurable": {
-                "thread_id": "user-123"
+                "thread_id": f"{thread_id}",
             },
-            "max_concurrency": 10
+            "max_concurrency": 30
         }
     )
 

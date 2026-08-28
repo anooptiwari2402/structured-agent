@@ -5,3 +5,5 @@ langchain-mcp-adapters
 duckduckgo-search
 rich
 ddgs
+langchain-nvidia-ai-endpoints
+python-dotenv
